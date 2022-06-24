@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.black-nav {
+  display: flex;
+  background: black;
+  width: 1920px;
+  height: 80px;
+  
+  color: rgb(245, 245, 235);
+  padding-left: 20px;
+
+}
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -32,6 +45,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
