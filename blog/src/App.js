@@ -16,6 +16,7 @@ function App() {
       <div className ="list">
         <h4>글제목</h4>
         <p>6월 25일 발행</p>
+        <p>6월 25일 발행</p>
 
       </div>
       {/* <h4>{post}</h4> */}
