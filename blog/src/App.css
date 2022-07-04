@@ -22,8 +22,18 @@ div{
   text-align: left;
   border-bottom: 1px solid gray;
 }
-
-
+.dd{
+  margin-top: 20px;
+  padding: 20px;
+  background: rgb(203, 106, 106);
+  text-align: left;
+}
+.modal{
+  margin-top: 20px;
+  padding: 20px;
+  background: rgb(235, 235, 235);
+  text-align: left;
+}
 
 .App-logo {
   height: 40vmin;
