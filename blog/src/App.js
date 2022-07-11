@@ -3,11 +3,17 @@ import './App.css';
 import { useState } from 'react';
 function App() {
   let post = '강남 우동 맛집';
-  let [글제목, 제목변경] = useState(['임술농민봉기', '병인양요', '임오군란']);
-  let [like, c] = useState([0, 0, 0]);
+  let [글제목, 제목변경] = useState(['임술농민봉기', '병인양요', '임오군란','띄얼키','ㅁㄴㅇ']);
+  let [like, chlike] = useState([0,0,0,0,0]);
 
   let [modal, setmodal] = useState(false);
-
+  // 글제목.map(function(o,p) {
+  // return(
+  //   like.push(0)
+  // )
+  
+  // })
+  // console.log(like);
   return (
     <div className="App">
       <div className="black-nav">
@@ -27,15 +33,17 @@ function App() {
         <p>6월 25일 발행</p>
       </div> */}
       {
-        글제목.map(function (a, i) {
+        글제목.map(function (a,i) {
           return (
             <div className="list">
               <h4>{글제목[i]}
-                <button onClick={() => {
+               <p><button onClick={() => {
                   let copy2 = [...like];
                   copy2[i] = copy2[i] + 1;
-                  c(copy2);
-                }}>{like[i]}🥰</button>
+                  chlike(copy2);
+                  //console.log(like);
+                }}> {like[i]}🥰</button>
+                </p>
 
 
               </h4>
@@ -61,7 +69,7 @@ function App() {
 
     </div >
   );
-
+ 
 }
 // function Modal() {
 //   return (
