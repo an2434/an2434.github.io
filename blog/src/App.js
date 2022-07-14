@@ -2,11 +2,18 @@
 import './App.css';
 import { useState } from 'react';
 function App() {
- // let post = '강남 우동 맛집';
+  // let post = '강남 우동 맛집';
   let [글제목, 제목변경] = useState(['임술농민봉기', '병인양요', '임오군란', '띄얼키', 'ㅁㄴㅇ']);
-  let [like, chlike] = useState([0, 0, 0, 0, 0]);
-  let [title,settitle] =useState(1);
+  let [like, setlike] = useState([0, 0, 0, 0, 0]);
+  let [title, settitle] = useState(1);
   let [modal, setmodal] = useState(false);
+  let [input,setinput]=useState(['']);
+  function save(){
+   let inputw =[...input];
+    글제목.concat(inputw);
+    제목변경(글제목);
+    console.log(input,글제목);
+  }
   // 글제목.map(function(o,p) {
   // return(
   //   like.push(0)
@@ -37,29 +44,38 @@ function App() {
         글제목.map(function (a, i) {
           return (
             <div className="list" key={i} >
-              <h4 onClick={() => { setmodal(true); settitle(i)}}>{글제목[i]}
+              <h4 onClick={() => {  setmodal(true); settitle(i) }}>{글제목[i]}
 
-                <span><button onClick={() => {
+                <span><button onClick={(e) => {
+                  e.stopPropagation();
                   let copy2 = [...like];
                   copy2[i] = copy2[i] + 1;
-                  chlike(copy2);
+                  setlike(copy2);
                   //console.log(like);
                 }}> {like[i]}🥰</button>
                 </span>
-              </h4> 
+              </h4>
               <p>6월 25일 발행</p>
             </div>
           )
         })
       }
 
-      {
-        modal === true ? <Modal title ={title} 글제목={글제목} 제목변경={제목변경} /> : null
-      }
--
 
+
+
+      <input type="text" onChange={(e)=>{setinput(e.target.value) ;console.log(input)}}></input><button onClick={save}>입력</button>
+{
+  console.log(input,글제목)
+  
+}
+      {
+        modal === true ? <Modal title={title} 글제목={글제목} 제목변경={제목변경} /> : null
+      }
       
-      
+
+
+
       {/*    
       <div className="list">
 
@@ -71,19 +87,19 @@ function App() {
           modal == true ? <Modal></Modal> : null
         }
       </div> */}
-         </div >
+    </div >
   );
 
 }
 function Modal(props) {
   return (
     <div className="modal" >
-      
+
       <h4>{props.글제목[props.title]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
       <button onClick>제목 변경 </button>
-    
+
     </div>);
 
 }
