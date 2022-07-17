@@ -97,18 +97,18 @@ function App() {
 
         </h4>
         <p>6월 25일 발행</p>
-<<<<<<< HEAD
+
         <p>6월 25일 발행</p>
 
   {console.log(like)}
 
       </div>
       {/* <h4>{post}</h4> */}
-=======
+
         {
           modal == true ? <Modal></Modal> : null
         }
-      </div> */}
+   
     </div>
   );
 }
@@ -119,7 +119,7 @@ function Modal(props) {
       <p>날짜</p>
       <p>상세내용</p>
       <button onClick>제목 변경 </button>
->>>>>>> d31991d8738e1e8f008256854bb2ec02a24cfa33
+
     </div>
   );
 }
