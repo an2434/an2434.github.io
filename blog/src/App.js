@@ -99,10 +99,18 @@ function App() {
 
         </h4>
         <p>6월 25일 발행</p>
+
+        <p>6월 25일 발행</p>
+
+  {console.log(like)}
+
+      </div>
+      {/* <h4>{post}</h4> */}
+
         {
           modal == true ? <Modal></Modal> : null
         }
-      </div> */}
+   
     </div>
   );
 }
@@ -113,6 +121,7 @@ function Modal(props) {
       <p>날짜</p>
       <p>상세내용</p>
       <button onClick>제목 변경 </button>
+
     </div>
   );
 }
