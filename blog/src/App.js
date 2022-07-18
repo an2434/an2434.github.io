@@ -10,6 +10,7 @@ function App() {
     "띄얼키",
     "ㅁㄴㅇ",
   ]);
+  let [key, setkey] = ([]);
   let [like, setlike] = useState([0, 0, 0, 0, 0]);
   let [drop, setdrop] = useState();
   let [title, settitle] = useState(1);
@@ -19,13 +20,13 @@ function App() {
   function save(e) {
     제목변경(글제목.concat(input));
     setlike(like.concat(0));
-    console.log(input, 글제목);
+
 
     e.stopPropagation();
     setinput("");
   }
   function deletekey(e) {
-    console.log(1);
+    console.log(key);
     e.stopPropagation();
   }
 
@@ -47,11 +48,12 @@ function App() {
 
       {글제목.map(function (a, i) {
         return (
-          <div className="list" key={i}>
+          <div className="list" key={setkey(key.concat(i))}>
             <h4
               onClick={() => {
                 setmodal(true);
                 settitle(i);
+               
               }}
             >
               {글제목[i]}
