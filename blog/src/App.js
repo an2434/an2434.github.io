@@ -58,6 +58,8 @@ function App() {
             >
               {글제목[i]}
 
+
+//
               <span>
                 <button
                   onClick={(e) => {
