@@ -47,7 +47,7 @@ function App() {
 
       {글제목.map(function (a, i) {
         return (
-          <div className="list" key={i}>
+          <div className="list" key = { i }>
             <h4
               onClick={() => {
                 setmodal(true);
@@ -63,7 +63,7 @@ function App() {
                     let copy2 = [...like];
                     copy2[i] = copy2[i] + 1;
                     setlike(copy2);
-                    //console.log(like);
+                    console.log(key);
                   }}
                 >
                   {" "}
