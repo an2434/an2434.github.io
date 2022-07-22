@@ -26,7 +26,7 @@ function App() {
     setinput("");
   }
   function deletekey(e) {
-    console.log(key);
+   // console.log(key);
     e.stopPropagation();
   }
 
