@@ -3,19 +3,19 @@ import "./App.css";
 import { useState } from "react";
 function App() {
   // let post = '강남 우동 맛집';
-  let [글제목, 제목변경] = useState([
+  const [글제목, 제목변경] = useState([
     "임술농민봉기",
     "병인양요",
     "임오군란",
     "띄얼키",
     "ㅁㄴㅇ",
   ]);
-  let [key, setkey] = ([]);
-  let [like, setlike] = useState([0, 0, 0, 0, 0]);
-  let [drop, setdrop] = useState();
-  let [title, settitle] = useState(1);
-  let [modal, setmodal] = useState(false);
-  let [input, setinput] = useState("");
+  const id = [];
+  const [like, setlike] = useState([0, 0, 0, 0, 0]);
+  const [drop, setdrop] = useState();
+  const [title, settitle] = useState(1);
+  const [modal, setmodal] = useState(false);
+  const [input, setinput] = useState("");
 
   function save(e) {
     제목변경(글제목.concat(input));
@@ -25,8 +25,8 @@ function App() {
     e.stopPropagation();
     setinput("");
   }
-  function deletekey(e) {
-   
+  function deleteid(e,id) {
+    id.filter(id1 => id1 == id);
     e.stopPropagation();
   }
 
@@ -49,7 +49,7 @@ function App() {
       {글제목.map(function (a, i) {
         return (
 
-          <div className="list" key = { i }>
+          <div className="list" id = { i }>
 
 
             <h4
@@ -76,7 +76,7 @@ function App() {
                   {" "}
                   {like[i]}🥰
                 </button>
-                <button onClick={deletekey}>삭제</button>
+                <button onClick={deleteid}>삭제</button>
               </span>
             </h4>
             <p>6월 25일 발행</p>
