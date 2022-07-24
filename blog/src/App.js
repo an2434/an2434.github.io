@@ -131,13 +131,6 @@ function Modal(props) {
   );
 }
 
-// function Dd(){
-//   return(
 
-//     <div className="dd">
-//       <h4>sdadsd</h4>
-//       </div>
-//   );
-// }
 
 export default App;
