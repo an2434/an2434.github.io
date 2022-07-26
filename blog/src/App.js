@@ -20,13 +20,13 @@ function App() {
   function save(e) {
     제목변경(글제목.concat(input));
     setlike(like.concat(0));
-
+    console.log(id);
 
     e.stopPropagation();
     setinput("");
   }
-  function deleteid(e,id) {
-    id.filter(id1 => id1 == id);
+  function deleteid(e) {
+    글제목.filter(ti => 글제목 == "임술농민봉기" );
     e.stopPropagation();
   }
 
@@ -62,7 +62,7 @@ function App() {
               {글제목[i]}
 
 
-//
+
               <span>
                 <button
                   onClick={(e) => {
@@ -70,7 +70,7 @@ function App() {
                     let copy2 = [...like];
                     copy2[i] = copy2[i] + 1;
                     setlike(copy2);
-                    console.log(key);
+                   
                   }}
                 >
                   {" "}
